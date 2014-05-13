@@ -1,0 +1,11 @@
+Sign up!
+%br
+= form_for @new_user, url: users_path, method: :post do |f|
+	Email:
+	= f.email_field :email
+	Password
+	= f.password_field :password
+	Password Confirmation
+	= f.password_field :password_confirmation
+	%br
+	= f.submit "Sign up"
