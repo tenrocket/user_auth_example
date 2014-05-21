@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+.small {
+	font-size: 10px;
+	float: right;
+}

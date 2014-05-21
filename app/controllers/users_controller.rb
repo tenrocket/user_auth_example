@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	skip_filter :ensure_logged_in, only: :guest_home_page
+	skip_filter :ensure_logged_in, only: [:new, :create]
 
 	def new
 		@new_user = User.new
@@ -8,14 +8,10 @@ class UsersController < ApplicationController
 	def create
 		@new_user = User.new(user_params)
 		if @new_user.save
-			redirect_to new_user_path, notice: "You signed up!"
+			redirect_to login_path, notice: "You signed up!"
 		else
 			render :new, notice: "You failed."
 		end
-	end
-
-	def guest_home_page
-
 	end
 
 	private
