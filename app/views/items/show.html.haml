@@ -1,0 +1,24 @@
+.item_description
+
+	.item_text
+		%h1= @item.name
+		%h3= @item.price
+		%br
+		%br
+		= @item.description
+
+	.item_images
+		.image_gallery
+			- @images.each do |image|
+				= image_tag image["url_75x75"]
+				%br
+				%br
+		.main_image
+			= image_tag @images.first["url_570xN"]
+%hr
+
+.item_details
+
+	.shipping_info
+		%h3= "SHIPPING INFO"
+		%p= "GROUND: #{@item.shipping}"

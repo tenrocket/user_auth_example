@@ -13,6 +13,12 @@ class ItemsController < ApplicationController
 		end
 	end
 
+	def show
+		@item = Item.find(params[:id])
+		response = HTTParty.get("https://openapi.etsy.com/v2/listings/#{@item.etsy_id}/images?api_key=#{Rails.application.secrets.etsy_api_key}")
+		@images = response["results"]
+	end
+
 	private
 
 	def item_params

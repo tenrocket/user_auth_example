@@ -1,3 +1,22 @@
-// Place all the styles related to the items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.item_description {
+	width: 100%;
+	height: 425px;
+	position: relative;
+	overflow: auto;
+}
+
+.item_text {
+	float: right;
+	width: 500px;
+}
+
+.image_gallery {
+	float: right;
+	margin-right: 70px;
+	overflow: auto;
+}
+
+.item_images {
+	overflow: auto;
+	height: 425px;
+}
